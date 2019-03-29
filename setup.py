@@ -18,10 +18,8 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
-target = os.path.join(path.expanduser(os.environ.get("INSTALL_DIR", None)), '')
+target = os.path.join(path.expanduser(os.environ.get("INSTALL_DIR", None)), os.path.join(os.getenv("HOME"), 'Xi-cam/'))
 
-if not target:
-    target = os.path.join(path.expanduser(os.getenv("HOME")), 'Xi-cam/')
 if not os.path.exists(target):
     os.makedirs(target)
 
@@ -33,7 +31,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='2.0.1',
+    version='2.0.2',
 
     description='The CAMERA platform for synchrotron data management, visualization, and reduction. This package conveniently clones the critical Xi-cam packages and performs editable source-installs.',
     long_description=long_description,
